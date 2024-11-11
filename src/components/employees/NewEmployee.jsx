@@ -3,7 +3,7 @@
 export const NewEmployee = () => {
 
     return (
-        <div className="employees-new-form">
+        <div className="employees-new">
             New Employee Form
         </div>
     )

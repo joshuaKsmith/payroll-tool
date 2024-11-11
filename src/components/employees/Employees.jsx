@@ -5,7 +5,7 @@ import "./Employees.css"
 export const Employees = () => {
 
     return (
-        <div className="employees">
+        <div className="employees-view">
             <EmployeeList />
             <NewEmployee />
         </div>

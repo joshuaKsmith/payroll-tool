@@ -17,8 +17,16 @@ export const EmployeeList = () => {
     }, [])
 
     return (
-        <div className="employees-list-panel">
-            Employee List Panel
+        <div className="employees-list">
+            <h2>Employees</h2>
+            <ul>
+                {employees.map((employee) =>
+                    <li className="employee-item">
+                        {employee.fullName}
+                    </li>
+                )}
+
+            </ul>
         </div>
     )
 }
