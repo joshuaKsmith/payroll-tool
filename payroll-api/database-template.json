@@ -1,6 +1,31 @@
 {
     "employees": [
-        { "id": 1, "email": "admin@admin.com", "isAdmin": true },
-        { "id": 2, "email": "test@test.com", "isAdmin": false }
+        { 
+            "id": 1, 
+            "isAdmin": true,
+            "hireDate": "2021-07-10",
+            "fullName": "Test Admin",
+            "rate": 20,
+            "email": "admin@admin.com",
+            "phone": "2708675309"
+        },
+        { 
+            "id": 2, 
+            "isAdmin": false,
+            "hireDate": "2024-11-11",
+            "fullName": "Test Employee",
+            "rate": 15,
+            "email": "test@test.com",
+            "phone": "4048675309"
+        },
+        { 
+            "id": 3, 
+            "isAdmin": false,
+            "hireDate": "2024-11-11",
+            "fullName": "Another Test Employee",
+            "rate": 17.50,
+            "email": "test2@test.com",
+            "phone": "4208675309"
+        }
     ]
 }
