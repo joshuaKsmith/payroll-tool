@@ -1,0 +1,6 @@
+{
+    "employees": [
+        { "id": 1, "email": "admin@admin.com", "isAdmin": true },
+        { "id": 2, "email": "test@test.com", "isAdmin": false }
+    ]
+}
