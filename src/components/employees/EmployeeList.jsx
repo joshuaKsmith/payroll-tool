@@ -22,7 +22,7 @@ export const EmployeeList = () => {
             <h2>Employees</h2>
             <ul className="employee-items">
                 {employees.map((employee) =>
-                    <Link to={`employees/${employee.id}`} key={employee.id} >
+                    <Link to={`${employee.id}`} key={employee.id} >
                         <li className="employee-item" key={employee.id}>
                             {employee.fullName}
                         </li>
