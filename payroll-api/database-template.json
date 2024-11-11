@@ -5,7 +5,7 @@
             "isAdmin": true,
             "hireDate": "2021-07-10",
             "fullName": "Test Admin",
-            "rate": 20,
+            "rate": "20.00",
             "email": "admin@admin.com",
             "phone": "2708675309"
         },
@@ -14,7 +14,7 @@
             "isAdmin": false,
             "hireDate": "2024-11-11",
             "fullName": "Test Employee",
-            "rate": 15,
+            "rate": "15.00",
             "email": "test@test.com",
             "phone": "4048675309"
         },
@@ -23,7 +23,7 @@
             "isAdmin": false,
             "hireDate": "2024-11-11",
             "fullName": "Another Test Employee",
-            "rate": 17.50,
+            "rate": "17.50",
             "email": "test2@test.com",
             "phone": "4208675309"
         }

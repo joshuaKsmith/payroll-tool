@@ -2,3 +2,8 @@
     display:flex;
     
 }
+
+.employees-new-form {
+    display:flex;
+    flex-direction: column;
+}

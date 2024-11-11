@@ -21,7 +21,7 @@ export const EmployeeList = () => {
             <h2>Employees</h2>
             <ul>
                 {employees.map((employee) =>
-                    <li className="employee-item">
+                    <li className="employee-item" key={employee.id}>
                         {employee.fullName}
                     </li>
                 )}
