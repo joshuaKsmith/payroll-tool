@@ -24,9 +24,9 @@ export const NewEmployee = () => {
     }
     
     const handleCreate = (event) => {
-        event.preventDefault()
+        // event.preventDefault()
         createNewEmployee(employee).then((newObject) => {
-            navigate(`/employees/${newObject.id}`)
+            // navigate(`/employees/${newObject.id}`)
         })
     }
 
@@ -34,7 +34,7 @@ export const NewEmployee = () => {
         <div className="employees-new">
             <h2>New Employee</h2>
             <form onSubmit={handleCreate} className="employees-new-form">
-                <label>
+                <label className="employees-new-label">
                     Name :
                     <input
                         type="text"
@@ -45,7 +45,7 @@ export const NewEmployee = () => {
                         className="employees-new-input"
                     />
                 </label>
-                <label>
+                <label className="employees-new-label">
                     Phone :
                     <input
                         type="text"
@@ -56,7 +56,7 @@ export const NewEmployee = () => {
                         className="employees-new-input"
                     />
                 </label>
-                <label>
+                <label className="employees-new-label">
                     Email :
                     <input
                         type="text"
@@ -67,34 +67,30 @@ export const NewEmployee = () => {
                         className="employees-new-input"
                     />
                 </label>
-                <div>
-                    <label>
-                        Rate :
-                        <input 
-                            type="text"
-                            name="rate"
-                            value={employee.rate}
-                            onChange={handleChange}
-                            required
-                            className="employees-new-rate"
-                        />
-                    </label>
-                    <label>
-                        Admin?
-                        <input
-                            type="checkbox"
-                            name="isAdmin"
-                            checked={employee.isAdmin}
-                            onChange={handleChange}
-                            className="employees-new-checkbox"
-                        />
-                    </label>
-                </div>
-                <div>
-                    <button className="employees-new-create" type="submit">
-                        Create
-                    </button>
-                </div>
+                <label className="employees-new-label">
+                    Rate :
+                    <input 
+                        type="text"
+                        name="rate"
+                        value={employee.rate}
+                        onChange={handleChange}
+                        required
+                        className="employees-new-input"
+                    />
+                </label>
+                <label className="employees-new-label">
+                    Admin?
+                    <input
+                        type="checkbox"
+                        name="isAdmin"
+                        checked={employee.isAdmin}
+                        onChange={handleChange}
+                        className="employees-new-input"
+                    />
+                </label>
+                <button className="employees-new-create" type="submit">
+                    Create
+                </button>
             </form>
         </div>
     )
