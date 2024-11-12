@@ -1,6 +1,6 @@
 
 
-export const Welcome = () => {
+export const Welcome = ({ currentUser }) => {
 
     return (
         <>Welcome</>

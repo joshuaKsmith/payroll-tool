@@ -20,7 +20,7 @@ export const EmployeeViews = ({ currentUser }) => {
                     </>
                 }
             >
-                <Route index element={<Welcome />} />
+                <Route index element={<Welcome currentUser={currentUser} />} />
                 <Route
                     path="shifts"
                     element={<Shifts currentUser={currentUser} />}

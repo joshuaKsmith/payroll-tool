@@ -21,7 +21,7 @@ export const AdminViews = ({ currentUser }) => {
                     </>
                 }
             >
-                <Route index element={<Welcome />} />
+                <Route index element={<Welcome currentUser={currentUser} />} />
                 <Route path="shifts">
                     <Route index element={<Shifts currentUser={currentUser}/>} />
                     <Route

@@ -19,6 +19,7 @@
 .container-login > h2 {
     margin: 20px;
     color: var(--dark);
+    text-decoration: underline;
 }
 
 fieldset {
@@ -43,7 +44,8 @@ fieldset {
     border-radius: 10px;
     padding: 10px;
     margin: 5px;
-
+    font-size: 18px;
+    box-shadow: 0px 0px 16px var(--dark)
 }
 
 .login-btn:hover {
