@@ -72,6 +72,12 @@
     flex-basis:42%;
 }
 
+.employee-items > a:hover {
+    box-shadow: 0px 0px 12px var(--dark);
+    font-weight: bold;
+    background-color: var(--light)
+}
+
 .employees-new-form {
     display:flex;
     flex-direction: column;
@@ -84,6 +90,7 @@
 
 .employees-new-form > label {
     margin: 4px;
+    text-decoration: underline;
 }
 
 .employees-new-label {
@@ -100,7 +107,7 @@
     max-width: 30%;
     align-self: center;
     padding: 4px;
-    color: var(--accent);
+    color: var(--darkest);
     font-size: 17px;
     margin-top: 10px;
     background-color: var(--light);
@@ -109,7 +116,9 @@
 
 .employees-new-create:hover {
     border: 2px var(--light) solid;
-    color: var(--light);
+    color: var(--dark);
     background-color: var(--accent);
+    font-weight: bold;
+    box-shadow: 0px 0px 16px var(--accent)
 }
 

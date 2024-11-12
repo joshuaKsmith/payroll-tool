@@ -10,11 +10,11 @@ font-family: "Roboto", sans-serif;
 /* COLOR PALETTE */
 /* Feel free to change these values and create your own color palette! https://coolors.co/ is a great resource */
 :root {
-    --lightest: #AC72C7; 
-    --light: #A861F0; 
+    --lightest: #ac72c7b4; 
+    --light: #a861f0a4; 
     --dark: #645170; 
     --darkest: #3c363f; 
-    --accent: #939D53; 
+    --accent: #12c0dfb9; 
   }
 
 /* GLOBAL STYLES */
