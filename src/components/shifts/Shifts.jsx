@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import "./Shifts.css"
 import { getAllEmployees } from "../../services/employeeService"
+import { postNewShift } from "../../services/shiftService"
 
 export const Shifts = ({ currentUser }) => {
     const [date, setDate] = useState(new Date().toISOString().slice(0,10))
@@ -29,8 +30,8 @@ export const Shifts = ({ currentUser }) => {
         })
     }
 
-    const handleShiftSubmission = (event) => {
-
+    const handleShiftSubmission = () => {
+        postNewShift(newShift)
     }
 
     useEffect(() => {
