@@ -25,9 +25,64 @@
 .shifts-new-entry {
     display:flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 8px;
     flex-basis: 40%;
     border: 5px var(--darkest) solid;
     border-radius: 10px;
     margin: 15px;
+    align-items: center;
+}
+
+.shifts-new-entry > h2 {
+    color: var(--darkest);
+    margin: 12px;
+    border: 3px var(--dark) solid;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.shifts-date {
+    align-self:center;
+    border: 1px var(--accent) solid;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.shifts-employee-select {
+    border: 1px var(--accent) solid;
+    font-size: 15px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.shifts-hours-label {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+.shifts-hours-input {
+    border: 1px var(--accent) solid;
+    margin-left: 5px;
+}
+
+.shifts-new-btn {
+    border: 2px var(--accent) solid;
+    max-width: 30%;
+    align-self: center;
+    padding: 4px;
+    color: var(--darkest);
+    font-size: 17px;
+    margin-top: 10px;
+    background-color: var(--light);
+    font-weight: 900;
+}
+
+.shifts-new-btn:hover {
+    border: 2px var(--light) solid;
+    color: var(--dark);
+    background-color: var(--accent);
+    font-weight: bold;
+    box-shadow: 0px 0px 16px var(--accent)
 }
