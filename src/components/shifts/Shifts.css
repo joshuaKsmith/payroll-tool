@@ -60,11 +60,17 @@
     margin-top: 15px;
     margin-bottom: 15px;
     text-decoration: underline;
+    color: var(--darkest);
+    font-size: 18px;
 }
 
 .shifts-hours-input {
     border: 1px var(--accent) solid;
-    margin-left: 5px;
+    margin-left: 15px;
+    max-width: 12%;
+    padding-left: 5px;
+    font-size: 18px;
+    color: var(--darkest);
 }
 
 .shifts-new-btn {

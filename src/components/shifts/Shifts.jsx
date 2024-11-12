@@ -8,7 +8,7 @@ export const Shifts = ({ currentUser }) => {
     const [newShift, setNewShift] = useState({
         date: new Date().toISOString().slice(0,10),
         employeeId: 1,
-        length: 0
+        length: "0"
     })
 
     const handleDateChange = (event) => {
@@ -20,6 +20,17 @@ export const Shifts = ({ currentUser }) => {
             prev.employeeId = event.target.value
             return prev
         })
+    }
+
+    const handleHoursChange = (event) => {
+        setNewShift((prev) => {
+            prev.length = event.target.value
+            return prev
+        })
+    }
+
+    const handleShiftSubmission = (event) => {
+
     }
 
     useEffect(() => {
@@ -53,18 +64,16 @@ export const Shifts = ({ currentUser }) => {
                     <label className="shifts-hours-label">
                         Hours Worked
                         <input 
-                            type="number"
-                            min="0"
-                            max="24"
-                            placeholder="0.0"
-                            step="0.1"
+                            type="text"
                             className="shifts-hours-input"
                             id="shifts-hours-input"
+                            onChange={handleHoursChange}
+                            required
                         />
                     </label>
                     <button
                         className="shifts-new-btn"
-                        onClick={() => {}}
+                        onClick={handleShiftSubmission}
                     >
                         Submit
                     </button>
