@@ -1,0 +1,33 @@
+.shifts-view {
+    display:flex;
+}
+
+.shifts-left-panel {
+    display:flex;
+    flex-direction: column;
+    border: 5px var(--darkest) solid;
+    border-radius: 10px;
+    flex-basis: 40%;
+    margin: 15px;
+    padding: 15px;
+}
+
+.shifts-right-panel {
+    display:flex;
+    flex-direction: column;
+    border: 5px var(--darkest) solid;
+    border-radius: 10px;
+    flex-basis: 60%;
+    margin: 15px;
+    padding: 15px;
+}
+
+.shifts-new-entry {
+    display:flex;
+    flex-direction: column;
+    padding: 15px;
+    flex-basis: 40%;
+    border: 5px var(--darkest) solid;
+    border-radius: 10px;
+    margin: 15px;
+}
