@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import "./Shifts.css"
 import { getAllEmployees } from "../../services/employeeService"
-import { postNewShift } from "../../services/shiftService"
+import { getShiftsByDate, postNewShift } from "../../services/shiftService"
+import { Shift } from "./Shift"
 
 export const Shifts = ({ currentUser }) => {
     const [date, setDate] = useState(new Date().toISOString().slice(0,10))
@@ -11,6 +12,13 @@ export const Shifts = ({ currentUser }) => {
         employeeId: 1,
         length: "0"
     })
+    const [shifts, setShifts] = useState([])
+
+    const getAndSetShifts = () => {
+        getShiftsByDate(date).then((shiftsArray) => {
+            setShifts(shiftsArray)
+        })
+    }
 
     const handleDateChange = (event) => {
         setDate(event.target.value)
@@ -31,7 +39,9 @@ export const Shifts = ({ currentUser }) => {
     }
 
     const handleShiftSubmission = () => {
-        postNewShift(newShift)
+        postNewShift(newShift).then(() => {
+            getAndSetShifts()
+        })
     }
 
     useEffect(() => {
@@ -39,6 +49,10 @@ export const Shifts = ({ currentUser }) => {
             setEmployees(employeeArray)
         })
     }, [])
+
+    useEffect(() => {
+        getAndSetShifts()
+    }, [date, employees])
 
     return (
         <div className="shifts-view">
@@ -81,7 +95,16 @@ export const Shifts = ({ currentUser }) => {
                 </div>
             </div>
             <div className="shifts-right-panel">
-                Shifts
+                <h2>Shifts</h2>
+                <ul className="shifts-list">
+                    {shifts.map((shift) => 
+                        <Shift 
+                            shift={shift}
+                            key={shift.id}
+                            getAndSetShifts={getAndSetShifts}
+                        />
+                    )}
+                </ul>
             </div>
         </div>
     )

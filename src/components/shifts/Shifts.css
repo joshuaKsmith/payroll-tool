@@ -92,3 +92,9 @@
     font-weight: bold;
     box-shadow: 0px 0px 16px var(--accent)
 }
+
+.shifts-list {
+    display:flex;
+    flex-direction: column;
+    flex-basis:42%;
+}
