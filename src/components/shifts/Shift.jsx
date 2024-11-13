@@ -16,7 +16,7 @@ export const Shift = ({ shift, getAndSetShifts }) => {
     return (
         <li className="shifts-list-item" key={shift.id}>
             <div className="shift-info">
-                <div>{shift.employee?.fullName}</div>
+                <div className="shift-item-name">{shift.employee?.fullName}</div>
                 <label className="shift-hours-label">
                     Hours
                     <input 
@@ -28,13 +28,13 @@ export const Shift = ({ shift, getAndSetShifts }) => {
             </div>
             <div className="shift-btn-container">
                 <button 
-                    className="shift-btn-delete"
+                    className="shift-btn-delete shift-btn"
                     onClick={handleShiftDelete}
                 >
                     DEL
                 </button>
                 <button 
-                    className="shift-btn-save"
+                    className="shift-btn-save shift-btn"
                     onClick={handleShiftEdit}
                 >
                     SAVE

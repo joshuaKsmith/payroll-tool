@@ -7,15 +7,28 @@
     flex-basis:44%;
 }
 
+.shifts-list-item:hover {
+    box-shadow: 0px 0px 12px var(--dark);
+}
+
 .shift-info {
     display:flex;
     flex-direction:column;
+}
+
+.shift-item-name {
+    margin-top:2px;
+}
+
+.shift-hours-label {
+    margin-top:4px;
 }
 
 .shift-hours-input {
     width:11%;
     margin-left: 15px;
     padding-left: 4px;
+    border: 1px var(--accent) solid;
 }
 
 .shift-btn-container {
@@ -34,3 +47,19 @@
     box-shadow: 0px 0px 10px var(--dark);
 }
 
+.shift-btn-save {
+    border: 2px var(--accent) solid;
+    background-color: var(--light)
+}
+
+.shift-btn-save:hover {
+    border: 2px var(--light) solid;
+    background-color: var(--accent);
+    box-shadow: 0px 0px 16px var(--accent)
+}
+
+.shift-btn {
+    margin: 1px;
+    padding: 2px;
+    font-size: 14px;
+}
