@@ -1,18 +1,29 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./Payroll.css"
 import { createNewPeriod } from "../../services/payrollService"
+import { getShiftsInDateRange } from "../../services/shiftService"
 
 export const Payroll = () => {
     const [startDate, setStartDate] = useState(new Date().toISOString().slice(0,10))
     const [endDate, setEndDate] = useState(new Date().toISOString().slice(0,10))
+    const [shifts, setShifts] = useState([])
     
+    const getAndSetShifts = () => {
+        getShiftsInDateRange(startDate, endDate).then((shiftArray) => {
+            setShifts(shiftArray)
+        })
+    }
 
     const handleCreatePeriod = () => {
         const newPeriod = { dateStart: startDate, dateEnd: endDate }
         createNewPeriod(newPeriod).then(() => {
-
+            getAndSetShifts()
         })
     }
+
+    useEffect(() => {
+        getAndSetShifts()
+    }, [startDate, endDate])
 
     return (
         <div className="payroll-view">
