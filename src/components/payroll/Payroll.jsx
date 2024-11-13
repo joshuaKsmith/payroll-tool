@@ -7,11 +7,22 @@ export const Payroll = () => {
     const [startDate, setStartDate] = useState(new Date().toISOString().slice(0,10))
     const [endDate, setEndDate] = useState(new Date().toISOString().slice(0,10))
     const [shifts, setShifts] = useState([])
+    const [total, setTotal] = useState("0")
     
     const getAndSetShifts = () => {
         getShiftsInDateRange(startDate, endDate).then((shiftArray) => {
             setShifts(shiftArray)
         })
+    }
+
+    const getAndSetTotal = () => {
+        let newTotal = 0
+        shifts.forEach((shift) => {
+            const thisTotal = shift.length * shift.employee?.rate
+            newTotal += thisTotal
+            setTotal(newTotal)
+        })
+
     }
 
     const handleCreatePeriod = () => {
@@ -24,6 +35,10 @@ export const Payroll = () => {
     useEffect(() => {
         getAndSetShifts()
     }, [startDate, endDate])
+
+    useEffect(() => {
+        getAndSetTotal()
+    }, [shifts])
 
     return (
         <div className="payroll-view">
@@ -77,7 +92,7 @@ export const Payroll = () => {
                 <label className="payroll-total-label">
                     Total Wages:
                     <div className="payroll-total-data">
-                        {}
+                        {total}
                     </div>
                 </label>
             </div>
