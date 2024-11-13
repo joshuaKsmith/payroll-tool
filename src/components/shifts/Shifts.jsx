@@ -85,6 +85,7 @@ export const Shifts = ({ currentUser }) => {
                     handleHoursChange={handleHoursChange}
                     handleShiftSubmission={handleShiftSubmission}
                     hoursInputRef={hoursInputRef}
+                    currentUser={currentUser}
                 />
             </div>
             <div className="shifts-right-panel">
