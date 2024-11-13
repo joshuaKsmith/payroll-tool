@@ -2,12 +2,14 @@ import { useEffect, useState } from "react"
 import "./Payroll.css"
 import { createNewPeriod } from "../../services/payrollService"
 import { getShiftsInDateRange } from "../../services/shiftService"
+import { useNavigate } from "react-router-dom"
 
 export const Payroll = () => {
     const [startDate, setStartDate] = useState(new Date().toISOString().slice(0,10))
     const [endDate, setEndDate] = useState(new Date().toISOString().slice(0,10))
     const [shifts, setShifts] = useState([])
     const [total, setTotal] = useState("0")
+    const navigate = useNavigate()
     
     const getAndSetShifts = () => {
         getShiftsInDateRange(startDate, endDate).then((shiftArray) => {
@@ -27,7 +29,7 @@ export const Payroll = () => {
     const handleCreatePeriod = () => {
         const newPeriod = { dateStart: startDate, dateEnd: endDate }
         createNewPeriod(newPeriod).then(() => {
-            getAndSetShifts()
+            navigate("/periods")
         })
     }
 
