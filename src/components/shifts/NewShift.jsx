@@ -1,14 +1,6 @@
-import { postNewShift } from "../../services/shiftService"
 
 
-export const NewShift = ({ handleEmployeeSelect, employees, handleHoursChange, getAndSetShifts, newShift }) => {
-
-    const handleShiftSubmission = (event) => {
-        event.preventDefault()
-        postNewShift(newShift).then(() => {
-            getAndSetShifts()
-        })
-    }
+export const NewShift = ({ handleEmployeeSelect, employees, handleHoursChange, handleShiftSubmission }) => {
 
     return (
         <form className="shifts-new-entry" onSubmit={handleShiftSubmission}> 
