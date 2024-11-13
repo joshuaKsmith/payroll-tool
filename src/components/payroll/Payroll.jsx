@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react"
 import "./Payroll.css"
-import { createNewPeriod } from "../../services/payrollService"
+import { createNewPeriod, createNewStub } from "../../services/payrollService"
 import { getShiftsInDateRange } from "../../services/shiftService"
 import { useNavigate } from "react-router-dom"
+import { getAllEmployees } from "../../services/employeeService"
 
 export const Payroll = () => {
     const [startDate, setStartDate] = useState(new Date().toISOString().slice(0,10))
     const [endDate, setEndDate] = useState(new Date().toISOString().slice(0,10))
     const [shifts, setShifts] = useState([])
     const [total, setTotal] = useState("0")
+    const [employees, setEmployees] = useState([])
     const navigate = useNavigate()
     
     const getAndSetShifts = () => {
@@ -26,15 +28,28 @@ export const Payroll = () => {
         })
     }
 
-    const handleCreateStubs = () => {
-        let newStubArray = []
-        
+    const getAndSetEmployees = () => {
+        getAllEmployees().then((employeeArray) => {
+            setEmployees(employeeArray)
+        })
+    }
+
+    const handleCreateStubs = (periodId) => {
+        const filteredEmployees = employees.filter((employee) => 
+            shifts.some((shift) => 
+                employee.id == shift.employeeId
+            )
+        )
+        filteredEmployees.forEach((employee) => {
+            const newStub = { employeeId: employee.id, periodId: periodId }
+            createNewStub(newStub)
+        })
     }
 
     const handleCreatePeriod = () => {
         const newPeriod = { dateStart: startDate, dateEnd: endDate }
-        createNewPeriod(newPeriod).then(() => {
-            handleCreateStubs()
+        createNewPeriod(newPeriod).then((thisPeriod) => {
+            handleCreateStubs(thisPeriod.id)
             navigate("/periods")
         })
     }
@@ -46,6 +61,10 @@ export const Payroll = () => {
     useEffect(() => {
         getAndSetTotal()
     }, [shifts])
+
+    useEffect(() => {
+        getAndSetEmployees()
+    }, [total])
 
     return (
         <div className="payroll-view">
