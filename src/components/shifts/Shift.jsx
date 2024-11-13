@@ -2,7 +2,7 @@ import { useState } from "react"
 import { deleteShiftById, updateEditedShift } from "../../services/shiftService"
 import "./Shift.css"
 
-export const Shift = ({ shift, getAndSetShifts }) => {
+export const Shift = ({ shift, getAndSetShifts, currentUser }) => {
 
     const [newHours, setNewHours] = useState(shift.length)
 
@@ -42,20 +42,22 @@ export const Shift = ({ shift, getAndSetShifts }) => {
                     />
                 </label>
             </div>
-            <div className="shift-btn-container">
-                <button 
-                    className="shift-btn-delete shift-btn"
-                    onClick={handleShiftDelete}
-                >
-                    DEL
-                </button>
-                <button 
-                    className="shift-btn-save shift-btn"
-                    onClick={handleShiftEdit}
-                >
-                    SAVE
-                </button>
-            </div>
+            {currentUser.isAdmin || currentUser.id == shift.employeeId ? (
+                <div className="shift-btn-container">
+                    <button 
+                        className="shift-btn-delete shift-btn"
+                        onClick={handleShiftDelete}
+                    >
+                        DEL
+                    </button>
+                    <button 
+                        className="shift-btn-save shift-btn"
+                        onClick={handleShiftEdit}
+                    >
+                        SAVE
+                    </button>
+                </div>
+            ): ("")}
         </li>
     )
 }

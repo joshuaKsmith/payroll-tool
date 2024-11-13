@@ -12,7 +12,7 @@ export const NewShift = ({
     return (
         <form className="shifts-new-entry" onSubmit={handleShiftSubmission}> 
             <h2>New Entry</h2>
-            {currentUser.isAdmin ? (
+            {currentUser.isAdmin && (
                 <select className="shifts-employee-select" id="shifts-select" onChange={handleEmployeeSelect}>
                     {employees.map((employee) => 
                         <option
@@ -24,7 +24,7 @@ export const NewShift = ({
                         </option>
                     )}
                 </select>
-            ) : ("")}
+            )}
             <label className="shifts-hours-label">
                 Hours Worked
                 <input 

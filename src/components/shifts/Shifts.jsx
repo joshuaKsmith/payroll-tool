@@ -96,6 +96,7 @@ export const Shifts = ({ currentUser }) => {
                             shift={shift}
                             key={shift.id}
                             getAndSetShifts={getAndSetShifts}
+                            currentUser={currentUser}
                         />
                     )}
                 </ul>
