@@ -1,10 +1,10 @@
 .shifts-list-item {
     display: flex;
-    flex-wrap: wrap;
     border: 2px var(--accent) solid;
     border-radius: 10px;
     padding: 6px;
     margin: 5px;
+    flex-basis:44%;
 }
 
 .shift-info {
@@ -12,9 +12,25 @@
     flex-direction:column;
 }
 
+.shift-hours-input {
+    width:11%;
+    margin-left: 15px;
+    padding-left: 4px;
+}
+
 .shift-btn-container {
     display:flex;
     flex-direction: column;
 }
 
+.shift-btn-delete {
+    border: 2px var(--dark) solid;
+    background-color: rgb(255, 0, 0, 20%);
+
+}
+
+.shift-btn-delete:hover {
+    background-color: rgb(255, 0, 0, 45%);
+    box-shadow: 0px 0px 10px var(--dark);
+}
 
