@@ -11,7 +11,7 @@ export const postNewShift = (shift) => {
 }
 
 export const getShiftsByDate = (date) => {
-    return fetch(`http://localhost:8088/shifts?date_lte=${date}&_expand=employee`).then((res) => res.json())
+    return fetch(`http://localhost:8088/shifts?date_lte=${date}&date_gte=${date}&_expand=employee`).then((res) => res.json())
 }
 
 export const deleteShiftById = (id) => {
