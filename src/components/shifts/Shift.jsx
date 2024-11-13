@@ -1,7 +1,10 @@
-import { deleteShiftById } from "../../services/shiftService"
+import { useState } from "react"
+import { deleteShiftById, updateEditedShift } from "../../services/shiftService"
 import "./Shift.css"
 
 export const Shift = ({ shift, getAndSetShifts }) => {
+
+    const [newHours, setNewHours] = useState(shift.length)
 
     const handleShiftDelete = () => {
         deleteShiftById(shift.id).then(() => {
@@ -9,8 +12,20 @@ export const Shift = ({ shift, getAndSetShifts }) => {
         })
     }
 
-    const handleShiftEdit = () => {
+    const handleHoursChange = (event) => {
+        setNewHours(event.target.value)
+    }
 
+    const handleShiftEdit = () => {
+        const updatedShift = {
+            id: shift.id,
+            date: shift.date,
+            employeeId: shift.employeeId,
+            length: newHours
+        }
+        updateEditedShift(updatedShift).then(() => {
+            getAndSetShifts()
+        })
     }
 
     return (
@@ -22,7 +37,8 @@ export const Shift = ({ shift, getAndSetShifts }) => {
                     <input 
                         type="text"
                         className="shift-hours-input"
-                        
+                        value={newHours}
+                        onChange={handleHoursChange}
                     />
                 </label>
             </div>

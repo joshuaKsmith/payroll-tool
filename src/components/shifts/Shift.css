@@ -25,9 +25,9 @@
 }
 
 .shift-hours-input {
-    width:11%;
+    width:15%;
     margin-left: 15px;
-    padding-left: 4px;
+    padding-left: 8px;
     border: 1px var(--accent) solid;
 }
 
