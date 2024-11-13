@@ -20,7 +20,6 @@
     flex-basis: 60%;
     margin: 15px;
     padding: 15px;
-    align-items: center;
 }
 
 .shifts-right-panel > h2 {
@@ -32,6 +31,7 @@
     color: var(--darkest);
     font-size: 28px;
     margin: 8px;
+    align-self: center;
 }
 
 .shifts-new-entry {
