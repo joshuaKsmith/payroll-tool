@@ -10,7 +10,7 @@ export const Shifts = ({ currentUser }) => {
     const [employees, setEmployees] = useState([])
     const [newShift, setNewShift] = useState({
         date: new Date().toISOString().slice(0,10),
-        employeeId: "1",
+        employeeId: (currentUser.isAdmin ? "1" : currentUser.id),
         length: "0"
     })
     const [shifts, setShifts] = useState([])
