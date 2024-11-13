@@ -22,7 +22,6 @@ export const Payroll = () => {
             newTotal += thisTotal
             setTotal(newTotal)
         })
-
     }
 
     const handleCreatePeriod = () => {
@@ -82,7 +81,7 @@ export const Payroll = () => {
                     </div>
                     {shifts.map((shift) => 
                         <div className="payroll-shift-item" key={shift.id}>
-                            <div>{shift.employee?.fullName}</div>
+                            <div className="payroll-shift-name">{shift.employee?.fullName}</div>
                             <div>{shift.length}</div>
                             <div>{shift.employee?.rate}</div>
                             <div>{shift.length * shift.employee?.rate}</div>
