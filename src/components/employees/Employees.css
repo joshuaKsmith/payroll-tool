@@ -81,6 +81,7 @@
 .employees-new-form {
     display:flex;
     flex-direction: column;
+    align-items: flex-end;
     padding-top:20px;
 }
 
@@ -105,6 +106,7 @@
 
 .employees-new-create {
     border: 2px var(--accent) solid;
+    border-radius: 10px;
     max-width: 30%;
     align-self: center;
     padding: 4px;

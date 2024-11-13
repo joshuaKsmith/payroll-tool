@@ -1,11 +1,8 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
 import { createNewEmployee } from "../../services/employeeService"
 
 
 export const NewEmployee = () => {
-    const navigate = useNavigate()
-    
     const [employee, setEmployee] = useState({
         isAdmin: false,
         hireDate: new Date().toISOString().slice(0,10),
@@ -24,9 +21,7 @@ export const NewEmployee = () => {
     }
     
     const handleCreate = (event) => {
-        // event.preventDefault()
         createNewEmployee(employee).then((newObject) => {
-            // navigate(`/employees/${newObject.id}`)
         })
     }
 

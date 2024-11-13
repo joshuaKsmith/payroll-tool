@@ -87,6 +87,7 @@
 
 .shifts-new-btn {
     border: 2px var(--accent) solid;
+    border-radius: 10px;
     max-width: 30%;
     align-self: center;
     padding: 4px;
