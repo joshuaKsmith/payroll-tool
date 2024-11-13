@@ -1,31 +1,86 @@
 {
     "employees": [
-        { 
-            "id": 1, 
-            "isAdmin": true,
-            "hireDate": "2021-07-10",
-            "fullName": "Test Admin",
-            "rate": "20.00",
-            "email": "admin@admin.com",
-            "phone": "2708675309"
-        },
-        { 
-            "id": 2, 
-            "isAdmin": false,
-            "hireDate": "2024-11-11",
-            "fullName": "Test Employee",
-            "rate": "15.00",
-            "email": "test@test.com",
-            "phone": "4048675309"
-        },
-        { 
-            "id": 3, 
-            "isAdmin": false,
-            "hireDate": "2024-11-11",
-            "fullName": "Another Test Employee",
-            "rate": "17.50",
-            "email": "test2@test.com",
-            "phone": "4208675309"
-        }
-    ]
-}
+      {
+        "id": 1,
+        "isAdmin": true,
+        "hireDate": "2021-07-10",
+        "fullName": "Test Admin",
+        "rate": "20.00",
+        "email": "admin@admin.com",
+        "phone": "2708675309"
+      },
+      {
+        "id": 2,
+        "isAdmin": false,
+        "hireDate": "2024-11-11",
+        "fullName": "Test Employee",
+        "rate": "15.00",
+        "email": "test@test.com",
+        "phone": "4048675309"
+      },
+      {
+        "id": 3,
+        "isAdmin": false,
+        "hireDate": "2024-11-11",
+        "fullName": "Another Test Employee",
+        "rate": "17.50",
+        "email": "test2@test.com",
+        "phone": "4208675309"
+      },
+      {
+        "isAdmin": true,
+        "hireDate": "2024-11-13",
+        "fullName": "Greg",
+        "rate": "50",
+        "email": "greg@greg.com",
+        "phone": "2708675309",
+        "id": 4
+      }
+    ],
+    "shifts": [
+      {
+        "id": 9,
+        "date": "2024-11-11",
+        "employeeId": "2",
+        "length": "6"
+      },
+      {
+        "date": "2024-11-11",
+        "employeeId": "1",
+        "length": "21",
+        "id": 13
+      },
+      {
+        "id": 16,
+        "date": "2024-11-12",
+        "employeeId": "1",
+        "length": "14"
+      },
+      {
+        "date": "2024-11-12",
+        "employeeId": "1",
+        "length": "22",
+        "id": 17
+      },
+      {
+        "id": 18,
+        "date": "2024-11-13",
+        "employeeId": "2",
+        "length": "21"
+      },
+      {
+        "date": "2024-11-12",
+        "employeeId": "4",
+        "length": "21",
+        "id": 19
+      },
+      {
+        "date": "2024-11-13",
+        "employeeId": "3",
+        "length": "21",
+        "id": 20
+      }
+    ],
+    "stubs": [],
+    "periods": []
+  }
