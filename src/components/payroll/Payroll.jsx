@@ -26,9 +26,15 @@ export const Payroll = () => {
         })
     }
 
+    const handleCreateStubs = () => {
+        let newStubArray = []
+        
+    }
+
     const handleCreatePeriod = () => {
         const newPeriod = { dateStart: startDate, dateEnd: endDate }
         createNewPeriod(newPeriod).then(() => {
+            handleCreateStubs()
             navigate("/periods")
         })
     }
