@@ -1,6 +1,6 @@
 
 
-export const NewShift = ({ handleEmployeeSelect, employees, handleHoursChange, handleShiftSubmission }) => {
+export const NewShift = ({ handleEmployeeSelect, employees, handleHoursChange, handleShiftSubmission, hoursInputRef }) => {
 
     return (
         <form className="shifts-new-entry" onSubmit={handleShiftSubmission}> 
@@ -22,6 +22,7 @@ export const NewShift = ({ handleEmployeeSelect, employees, handleHoursChange, h
                     type="text"
                     className="shifts-hours-input"
                     id="shifts-hours-input"
+                    ref={hoursInputRef}
                     onChange={handleHoursChange}
                     required
                 />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import "./Shifts.css"
 import { getAllEmployees } from "../../services/employeeService"
 import { getShiftsByDate, postNewShift } from "../../services/shiftService"
@@ -14,6 +14,7 @@ export const Shifts = ({ currentUser }) => {
         length: "0"
     })
     const [shifts, setShifts] = useState([])
+    const hoursInputRef = useRef(null)
 
     const getAndSetShifts = () => {
         getShiftsByDate(date).then((shiftsArray) => {
@@ -23,8 +24,10 @@ export const Shifts = ({ currentUser }) => {
 
     const resetForm = () => {
         setNewShift((prev) => {
-
+            prev.length = "0"
+            return prev
         })
+        hoursInputRef.current.value = "0"
     }
 
     const handleDateChange = (event) => {
@@ -49,7 +52,7 @@ export const Shifts = ({ currentUser }) => {
         event.preventDefault()
         postNewShift(newShift).then(() => {
             getAndSetShifts()
-            // resetForm()
+            resetForm()
         })
     }
 
@@ -81,6 +84,7 @@ export const Shifts = ({ currentUser }) => {
                     employees={employees}
                     handleHoursChange={handleHoursChange}
                     handleShiftSubmission={handleShiftSubmission}
+                    hoursInputRef={hoursInputRef}
                 />
             </div>
             <div className="shifts-right-panel">
