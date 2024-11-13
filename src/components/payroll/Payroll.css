@@ -72,12 +72,12 @@
 
 .payroll-info {
     display:flex;
+    flex-direction: column;
     flex-basis:80%;
 }
 
 .payroll-info-header {
     display:flex;
-    flex-basis:100%;
 }
 
 .payroll-info-header > h2 {
@@ -85,6 +85,17 @@
     display:flex;
     justify-content: center;
     text-decoration: underline;
+}
+
+.payroll-shift-item {
+    display:flex;
+    
+}
+
+.payroll-shift-item > div {
+    flex-basis:25%;
+    display:flex;
+    justify-content: center;
 }
 
 .payroll-total-label {

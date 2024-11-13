@@ -65,13 +65,20 @@ export const Payroll = () => {
                         <h2>Rate</h2>
                         <h2>Total</h2>
                     </div>
-                    {
-
-                    }
+                    {shifts.map((shift) => 
+                        <div className="payroll-shift-item" key={shift.id}>
+                            <div>{shift.employee?.fullName}</div>
+                            <div>{shift.length}</div>
+                            <div>{shift.employee?.rate}</div>
+                            <div>{shift.length * shift.employee?.rate}</div>
+                        </div>
+                    )}
                 </div>
                 <label className="payroll-total-label">
                     Total Wages:
-                    <div className="payroll-total-data"></div>
+                    <div className="payroll-total-data">
+                        {}
+                    </div>
                 </label>
             </div>
         </div>
