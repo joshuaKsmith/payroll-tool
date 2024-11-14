@@ -4,12 +4,13 @@ import { createNewPeriod, createNewStub } from "../../services/payrollService"
 import { getShiftsInDateRange } from "../../services/shiftService"
 import { useNavigate } from "react-router-dom"
 import { getAllEmployees } from "../../services/employeeService"
+import { PayrollDisplay } from "./PayrollDisplay"
 
 export const Payroll = () => {
     const [startDate, setStartDate] = useState(new Date().toISOString().slice(0,10))
     const [endDate, setEndDate] = useState(new Date().toISOString().slice(0,10))
     const [shifts, setShifts] = useState([])
-    const [total, setTotal] = useState("0")
+    const [total, setTotal] = useState("")
     const [employees, setEmployees] = useState([])
     const navigate = useNavigate()
     
@@ -98,30 +99,7 @@ export const Payroll = () => {
                     </button>
                 </div>
             </div>
-            <div className="payroll-display">
-                <div className="payroll-info">
-                    <div className="payroll-info-header">
-                        <h2>Name</h2>
-                        <h2>Hours</h2>
-                        <h2>Rate</h2>
-                        <h2>Total</h2>
-                    </div>
-                    {shifts.map((shift) => 
-                        <div className="payroll-shift-item" key={shift.id}>
-                            <div className="payroll-shift-name">{shift.employee?.fullName}</div>
-                            <div>{shift.length}</div>
-                            <div>{shift.employee?.rate}</div>
-                            <div>{shift.length * shift.employee?.rate}</div>
-                        </div>
-                    )}
-                </div>
-                <label className="payroll-total-label">
-                    Total Wages:
-                    <div className="payroll-total-data">
-                        {total}
-                    </div>
-                </label>
-            </div>
+            <PayrollDisplay shifts={shifts} total={total} />
         </div>
     )
 }
