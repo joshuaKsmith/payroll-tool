@@ -5,7 +5,7 @@ import { Shifts } from "../components/shifts/Shifts"
 import { Payroll } from "../components/payroll/Payroll"
 import { Employees } from "../components/employees/Employees"
 import { EmployeeDetails } from "../components/employees/EmployeeDetails"
-import { Periods } from "../components/periods/Periods"
+import { Periods } from "../components/payroll/Periods"
 
 export const AdminViews = ({ currentUser }) => {
 

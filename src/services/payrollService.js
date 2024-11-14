@@ -9,6 +9,10 @@ export const createNewPeriod = (period) => {
     }).then((res) => res.json())
 }
 
+export const getAllPeriods = () => {
+    return fetch(`http:localhost:8088/periods`).then((res) => res.json())
+}
+
 export const createNewStub = (stub) => {
     return fetch(`http://localhost:8088/stubs`, {
         method: "POST",

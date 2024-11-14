@@ -1,4 +1,4 @@
-
+import "./PayrollDisplay.css"
 
 export const PayrollDisplay = ({ shifts, total }) => {
 
