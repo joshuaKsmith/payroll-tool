@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import "./EmployeeDetails.css"
 import { useEffect, useState } from "react"
-import { getEmployeeById } from "../../services/employeeService"
+import { getEmployeeById, updateEmployeeRecord } from "../../services/employeeService"
 
 export const EmployeeDetails = ({ currentUser }) => {
     const [employee, setEmployee] = useState({
@@ -9,7 +9,8 @@ export const EmployeeDetails = ({ currentUser }) => {
         phone: "",
         hireDate: "",
         rate: "",
-        email: ""
+        email: "",
+        isAdmin: false
     })
     const { employeeId } = useParams()
 
@@ -27,6 +28,12 @@ export const EmployeeDetails = ({ currentUser }) => {
         }))
     }
 
+    const handleUpdateEmployee = () => {
+        updateEmployeeRecord(employee).then(() => {
+            getAndSetEmployee
+        })
+    }
+
     useEffect(() => {
         getAndSetEmployee()
     }, [])
@@ -34,7 +41,7 @@ export const EmployeeDetails = ({ currentUser }) => {
     return (
         <div className="employee-profile">
             <h1>Employee Profile</h1>
-            <form className="employee-edit">
+            <form className="employee-edit" onSubmit={handleUpdateEmployee}>
                 <div className="employee-edit-form">
                     <label>
                         Name:
@@ -90,9 +97,11 @@ export const EmployeeDetails = ({ currentUser }) => {
                         </label>
                         <label>
                             Admin?
-                            <input 
+                            <input
+                                name="isAdmin"
                                 type="checkbox"
                                 checked={employee.isAdmin}
+                                onChange={handleChange}
                             />
                         </label>
                     </div>
@@ -100,6 +109,7 @@ export const EmployeeDetails = ({ currentUser }) => {
                 <div className="profile-btn-container">
                     <button
                         className="profile-btn-save profile-btn"
+                        type="submit"
                     >
                         Update
                     </button>
