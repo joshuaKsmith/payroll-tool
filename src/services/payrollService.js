@@ -10,7 +10,7 @@ export const createNewPeriod = (period) => {
 }
 
 export const getAllPeriods = () => {
-    return fetch(`http:localhost:8088/periods`).then((res) => res.json())
+    return fetch(`http://localhost:8088/periods`).then((res) => res.json())
 }
 
 export const createNewStub = (stub) => {
