@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
-import { getEmployeeById } from "../../services/employeeService"
+import { getEmployeeById, updateEmployeeRecord } from "../../services/employeeService"
 import "./Profile.css"
+import { useNavigate } from "react-router-dom"
 
 export const Profile = ({ currentUser }) => {
-
+    const navigate = useNavigate()
     const [employee, setEmployee] = useState({
         fullName: "",
         phone: "",
@@ -28,7 +29,10 @@ export const Profile = ({ currentUser }) => {
     }
 
     const handleUpdateEmployee = () => {
-        updateEmployeeRecord(employee)
+        updateEmployeeRecord(employee).then(() => {
+            window.alert("Profile Updated!")
+            navigate("..")
+        })
     }
 
     useEffect(() => {
@@ -48,7 +52,6 @@ export const Profile = ({ currentUser }) => {
                             name="fullName"
                             readOnly
                             value={employee.fullName}
-                            onChange={handleChange}
                         />
                     </label>
                     <label>
@@ -69,7 +72,6 @@ export const Profile = ({ currentUser }) => {
                             name="hireDate"
                             readOnly
                             value={employee.hireDate}
-                            onChange={handleChange}
                         />
                     </label>
                     <label>
@@ -91,7 +93,6 @@ export const Profile = ({ currentUser }) => {
                                 name="rate"
                                 readOnly
                                 value={employee.rate}
-                                onChange={handleChange}
                             />
                         </label>
                     </div>
