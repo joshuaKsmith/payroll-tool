@@ -50,9 +50,9 @@ export const Periods = () => {
     }, [shifts])
 
     return (
-        <div>
-            <div>
-                <select onChange={handlePeriodSelect}>
+        <div className="periods-view">
+            <div className="periods-view-select"> 
+                <select className="periods-view-dropdown" onChange={handlePeriodSelect}>
                     <option key={0} value="">Select a Period</option>
                     {periods.map((period) => 
                         <option key={period.id}>
