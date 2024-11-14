@@ -15,6 +15,12 @@ export const getShiftsInDateRange = (dateStart, dateEnd) => {
     ).then((res) => res.json())
 }
 
+export const getShiftsInDateRangeByUser = (id, dateStart, dateEnd) => {
+    return fetch (
+        `http://localhost:8088/shifts?employeeId=${id}&date_gte=${dateStart}&date_lte=${dateEnd}&_expand=employee`
+    ).then((res) => res.json())
+}
+
 export const deleteShiftById = (id) => {
     return fetch(`http://localhost:8088/shifts/${id}`, {
         method: "DELETE"
