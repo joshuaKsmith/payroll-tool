@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import { getEmployeeById, updateEmployeeRecord } from "../../services/employeeService"
 
 export const EmployeeDetails = ({ currentUser }) => {
+    const { employeeId } = useParams()
+
     const [employee, setEmployee] = useState({
         fullName: "",
         phone: "",
@@ -12,7 +14,6 @@ export const EmployeeDetails = ({ currentUser }) => {
         email: "",
         isAdmin: false
     })
-    const { employeeId } = useParams()
 
     const getAndSetEmployee = () => {
         getEmployeeById(employeeId).then((employeeObject) => {
