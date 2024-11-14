@@ -33,7 +33,7 @@ export const AdminViews = ({ currentUser }) => {
                     <Route index element={<Employees />} />
                     <Route
                         path=":employeeId"
-                        element={<EmployeeDetails />} 
+                        element={<EmployeeDetails currentUser={currentUser} />} 
                     />
                 </Route>
                 <Route

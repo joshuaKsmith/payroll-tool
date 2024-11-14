@@ -30,6 +30,7 @@
     flex-direction: column;
     align-items: flex-end;
     margin-bottom: 20px;
+    padding-top: 10px;
 }
 
 .employee-edit-box {
@@ -37,6 +38,10 @@
     justify-content: flex-end;
     margin-top: 5px;
     
+}
+
+.employee-edit-field {
+    border: 1px var(--accent) solid;
 }
 
 .employee-edit-form > label {
@@ -61,6 +66,7 @@
 
 .profile-btn-container {
     display:flex;
+    margin: 10px;
 }
 
 .profile-btn {
@@ -84,7 +90,7 @@
 .profile-btn-save {
     border: 2px var(--accent) solid;
     background-color: var(--light);
-    margin-left: 225px;
+    margin-left: 230px;
     font-size: 24px;
     padding: 5px;
 }

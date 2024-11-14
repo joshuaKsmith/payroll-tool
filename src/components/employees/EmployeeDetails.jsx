@@ -1,10 +1,35 @@
 import { useParams } from "react-router-dom"
 import "./EmployeeDetails.css"
+import { useEffect, useState } from "react"
+import { getEmployeeById } from "../../services/employeeService"
 
-export const EmployeeDetails = () => {
-
-
+export const EmployeeDetails = ({ currentUser }) => {
+    const [employee, setEmployee] = useState({
+        fullName: "",
+        phone: "",
+        hireDate: "",
+        rate: "",
+        email: ""
+    })
     const { employeeId } = useParams()
+
+    const getAndSetEmployee = () => {
+        getEmployeeById(employeeId).then((employeeObject) => {
+            setEmployee(employeeObject)
+        })
+    }
+
+    const handleChange = (event) => {
+        const { name, value, type, checked } = event.target
+        setEmployee((prev) => ({
+            ...prev,
+            [name]: type === "checkbox" ? checked : value,
+        }))
+    }
+
+    useEffect(() => {
+        getAndSetEmployee()
+    }, [])
 
     return (
         <div className="employee-profile">
@@ -13,25 +38,37 @@ export const EmployeeDetails = () => {
                 <div className="employee-edit-form">
                     <label>
                         Name:
-                        <input 
-                        
+                        <input
+                            className="employee-edit-field"
+                            type="text"
+                            name="fullName"
+                            value={employee.fullName}
+                            onChange={handleChange}
                         />
                     </label>
                     <label>
                         Phone:
                         <input 
-                        
+                            className="employee-edit-field"
+                            type="text"
+                            name="phone"
+                            value={employee.phone}
+                            onChange={handleChange}
                         />
                     </label>
                     <label>
                         Hire Date:
-                        <input 
+                        <input
+                            type="text"
+                            name="hireDate"
                             readOnly
+                            value={employee.hireDate}
                         />
                     </label>
                     <label>
                         Email:
-                        <input 
+                        <input
+                            className="employee-edit-field"
                         
                         />
                     </label>
@@ -39,13 +76,14 @@ export const EmployeeDetails = () => {
                         <label className="employee-edit-rate-label">
                             Rate:
                             <input 
-                                className="employee-edit-rate-input"
+                                className="employee-edit-rate-input employee-edit-field"
                             />
                         </label>
                         <label>
                             Admin?
                             <input 
                                 type="checkbox"
+                                
                             />
                         </label>
                     </div>
