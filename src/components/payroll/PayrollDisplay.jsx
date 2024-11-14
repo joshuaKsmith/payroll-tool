@@ -1,6 +1,6 @@
 import "./PayrollDisplay.css"
 
-export const PayrollDisplay = ({ shifts, total }) => {
+export const PayrollDisplay = ({ shifts, total, currentUser }) => {
 
 
     return (
@@ -22,7 +22,7 @@ export const PayrollDisplay = ({ shifts, total }) => {
                 )}
             </div>
             <label className="payroll-total-label">
-                Total Wages:
+                {currentUser.isAdmin ? "Total Wages:" : "Total Earnings:"}
                 <div className="payroll-total-data">
                     {total}
                 </div>

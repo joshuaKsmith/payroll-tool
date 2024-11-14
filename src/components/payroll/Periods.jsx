@@ -4,7 +4,7 @@ import "./Periods.css"
 import { getAllPeriods } from "../../services/payrollService"
 import { getShiftsInDateRange } from "../../services/shiftService"
 
-export const Periods = () => {
+export const Periods = ({ currentUser }) => {
     const [periods, setPeriods] = useState([])
     const [startDate, setStartDate] = useState("")
     const [endDate, setEndDate] = useState("")
@@ -65,7 +65,7 @@ export const Periods = () => {
                     )}
                 </select>
             </div>
-            <PayrollDisplay shifts={shifts} total={total} />
+            <PayrollDisplay shifts={shifts} total={total} currentUser={currentUser} />
         </div>
     )
 }

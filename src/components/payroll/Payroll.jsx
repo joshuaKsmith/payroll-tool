@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { getAllEmployees } from "../../services/employeeService"
 import { PayrollDisplay } from "./PayrollDisplay"
 
-export const Payroll = () => {
+export const Payroll = ({ currentUser }) => {
     const [startDate, setStartDate] = useState(new Date().toISOString().slice(0,10))
     const [endDate, setEndDate] = useState(new Date().toISOString().slice(0,10))
     const [shifts, setShifts] = useState([])
@@ -102,7 +102,7 @@ export const Payroll = () => {
                     </button>
                 </div>
             </div>
-            <PayrollDisplay shifts={shifts} total={total} />
+            <PayrollDisplay shifts={shifts} total={total} currentUser={currentUser} />
         </div>
     )
 }

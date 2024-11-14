@@ -26,7 +26,7 @@ export const AdminViews = ({ currentUser }) => {
                     <Route index element={<Shifts currentUser={currentUser}/>} />
                     <Route
                         path="payroll"
-                        element={<Payroll />}
+                        element={<Payroll currentUser={currentUser} />}
                     />
                 </Route>
                 <Route path="employees">
@@ -38,7 +38,7 @@ export const AdminViews = ({ currentUser }) => {
                 </Route>
                 <Route
                     path="periods"
-                    element={<Periods />}
+                    element={<Periods currentUser={currentUser} />}
                 />
             </Route>
         </Routes>
