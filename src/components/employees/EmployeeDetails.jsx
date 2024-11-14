@@ -59,17 +59,22 @@ export const EmployeeDetails = ({ currentUser }) => {
                     <label>
                         Hire Date:
                         <input
+                            className="employee-edit-hire-input"
                             type="text"
                             name="hireDate"
                             readOnly
                             value={employee.hireDate}
+                            onChange={handleChange}
                         />
                     </label>
                     <label>
                         Email:
                         <input
                             className="employee-edit-field"
-                        
+                            type="text"
+                            name="email"
+                            value={employee.email}
+                            onChange={handleChange}
                         />
                     </label>
                     <div className="employee-edit-box">
@@ -77,13 +82,17 @@ export const EmployeeDetails = ({ currentUser }) => {
                             Rate:
                             <input 
                                 className="employee-edit-rate-input employee-edit-field"
+                                type="text"
+                                name="rate"
+                                value={employee.rate}
+                                onChange={handleChange}
                             />
                         </label>
                         <label>
                             Admin?
                             <input 
                                 type="checkbox"
-                                
+                                checked={employee.isAdmin}
                             />
                         </label>
                     </div>

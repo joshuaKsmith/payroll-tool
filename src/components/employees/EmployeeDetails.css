@@ -42,6 +42,7 @@
 
 .employee-edit-field {
     border: 1px var(--accent) solid;
+    font-size: 15px;
 }
 
 .employee-edit-form > label {
@@ -59,9 +60,15 @@
 }
 
 .employee-edit-rate-input {
-    max-width: 20%;
+    max-width: 25%;
     margin-left: 20px;
 
+}
+
+.employee-edit-hire-input {
+    background-color: var(--dark);
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .profile-btn-container {
