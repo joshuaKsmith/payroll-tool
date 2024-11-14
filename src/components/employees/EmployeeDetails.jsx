@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import "./EmployeeDetails.css"
 import { useEffect, useState } from "react"
-import { getEmployeeById, updateEmployeeRecord } from "../../services/employeeService"
+import { getEmployeeById, terminateEmployee, updateEmployeeRecord } from "../../services/employeeService"
 
 export const EmployeeDetails = ({ currentUser }) => {
     const { employeeId } = useParams()
+    const navigate = useNavigate()
 
     const [employee, setEmployee] = useState({
         fullName: "",
@@ -30,8 +31,13 @@ export const EmployeeDetails = ({ currentUser }) => {
     }
 
     const handleUpdateEmployee = () => {
-        updateEmployeeRecord(employee).then(() => {
-            getAndSetEmployee
+        updateEmployeeRecord(employee)
+    }
+
+    const handleTermination = () => {
+        terminateEmployee(employeeId).then(() => {
+            navigate("..")
+
         })
     }
 
@@ -116,6 +122,7 @@ export const EmployeeDetails = ({ currentUser }) => {
                     </button>
                     <button
                         className="profile-btn-delete profile-btn"
+                        onClick={handleTermination}
                     >
                         Terminate
                     </button>
