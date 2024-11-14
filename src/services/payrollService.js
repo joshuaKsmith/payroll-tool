@@ -1,5 +1,4 @@
 
-
 export const createNewPeriod = (period) => {
     return fetch(`http://localhost:8088/periods`, {
         method: "POST",

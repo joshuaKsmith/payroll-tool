@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import "./Shifts.css"
 import { getAllEmployees } from "../../services/employeeService"
-import { getShiftsByDate, postNewShift } from "../../services/shiftService"
+import { getShiftsInDateRange, postNewShift } from "../../services/shiftService"
 import { Shift } from "./Shift"
 import { NewShift } from "./NewShift"
 
@@ -17,7 +17,7 @@ export const Shifts = ({ currentUser }) => {
     const hoursInputRef = useRef(null)
 
     const getAndSetShifts = () => {
-        getShiftsByDate(date).then((shiftsArray) => {
+        getShiftsInDateRange(date, date).then((shiftsArray) => {
             setShifts(shiftsArray)
         })
     }
