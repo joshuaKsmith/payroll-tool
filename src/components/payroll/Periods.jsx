@@ -33,8 +33,12 @@ export const Periods = () => {
     }
 
     const handlePeriodSelect = (event) => {
-        setStartDate(event.target.value.slice(0,10))
-        setEndDate(event.target.value.slice(16,26))
+        const dateString = event.target.value
+        setStartDate(dateString.slice(0,10))
+        setEndDate(dateString.slice(16,26))
+        if(!dateString) {
+            setTotal("")
+        }
     }
 
     useEffect(() => {
