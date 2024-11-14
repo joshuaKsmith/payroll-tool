@@ -27,6 +27,9 @@ export const Payroll = () => {
             newTotal += thisTotal
             setTotal(newTotal)
         })
+        if(!shifts[0]) {
+            setTotal("")
+        }
     }
 
     const getAndSetEmployees = () => {
