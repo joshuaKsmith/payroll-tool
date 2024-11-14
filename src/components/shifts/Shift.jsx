@@ -25,6 +25,7 @@ export const Shift = ({ shift, getAndSetShifts, currentUser }) => {
         }
         updateEditedShift(updatedShift).then(() => {
             getAndSetShifts()
+            window.alert("Shift record updated!")
         })
     }
 
@@ -34,12 +35,21 @@ export const Shift = ({ shift, getAndSetShifts, currentUser }) => {
                 <div className="shift-item-name">{shift.employee?.fullName}</div>
                 <label className="shift-hours-label">
                     Hours
-                    <input 
-                        type="text"
-                        className="shift-hours-input"
-                        value={newHours}
-                        onChange={handleHoursChange}
-                    />
+                    {currentUser.isAdmin || currentUser.id == shift.employeeId ? (
+                        <input 
+                            type="text"
+                            className="shift-hours-input"
+                            value={newHours}
+                            onChange={handleHoursChange}
+                        />
+                    ) : (
+                        <input 
+                            type="text"
+                            className="shift-hours-input read-only"
+                            value={newHours}
+                            readOnly
+                        />
+                    )}
                 </label>
             </div>
             {currentUser.isAdmin || currentUser.id == shift.employeeId ? (
