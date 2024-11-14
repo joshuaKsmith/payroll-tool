@@ -37,7 +37,6 @@ export const EmployeeDetails = ({ currentUser }) => {
     const handleTermination = () => {
         terminateEmployee(employeeId).then(() => {
             navigate("..")
-
         })
     }
 
@@ -48,7 +47,7 @@ export const EmployeeDetails = ({ currentUser }) => {
     return (
         <div className="employee-profile">
             <h1>Employee Profile</h1>
-            <form className="employee-edit" onSubmit={handleUpdateEmployee}>
+            <div className="employee-edit">
                 <div className="employee-edit-form">
                     <label>
                         Name:
@@ -116,7 +115,7 @@ export const EmployeeDetails = ({ currentUser }) => {
                 <div className="profile-btn-container">
                     <button
                         className="profile-btn-save profile-btn"
-                        type="submit"
+                        onClick={handleUpdateEmployee}
                     >
                         Update
                     </button>
@@ -127,7 +126,7 @@ export const EmployeeDetails = ({ currentUser }) => {
                         Terminate
                     </button>
                 </div>
-            </form>
+            </div>
         </div>
     )
 }
