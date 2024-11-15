@@ -1,6 +1,9 @@
 
+const API_URL = "https://payroll-api-4oxy5.ondigitalocean.app"
+
+
 export const createNewPeriod = (period) => {
-    return fetch(`http://localhost:8088/periods`, {
+    return fetch(`${API_URL}/periods`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -10,11 +13,11 @@ export const createNewPeriod = (period) => {
 }
 
 export const getAllPeriods = () => {
-    return fetch(`http://localhost:8088/periods`).then((res) => res.json())
+    return fetch(`${API_URL}/periods`).then((res) => res.json())
 }
 
 export const createNewStub = (stub) => {
-    return fetch(`http://localhost:8088/stubs`, {
+    return fetch(`${API_URL}/stubs`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
