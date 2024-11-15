@@ -11,7 +11,7 @@ export const Welcome = ({ currentUser }) => {
     useEffect(() => {
         if(currentUser.id) {
             getEmployeeById(currentUser.id).then((employeeObject) => {
-            setUser(employeeObject)
+                setUser(employeeObject)
             })            
         }
     }, [currentUser])
