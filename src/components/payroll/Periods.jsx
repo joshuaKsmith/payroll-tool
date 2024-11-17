@@ -30,6 +30,9 @@ export const Periods = ({ currentUser }) => {
             newTotal += thisTotal
             setTotal(newTotal)
         })
+        if (!shifts[0]) {
+            setTotal("")
+        }
     }
 
     const handlePeriodSelect = (event) => {
