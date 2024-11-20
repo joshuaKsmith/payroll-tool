@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { createNewEmployee } from "../../services/employeeService"
+import { useNavigate } from "react-router-dom"
 
 
 export const NewEmployee = () => {
+    const navigate = useNavigate()
     const [employee, setEmployee] = useState({
         isAdmin: false,
         hireDate: new Date().toISOString().slice(0,10),
@@ -20,15 +22,16 @@ export const NewEmployee = () => {
         }))
     }
     
-    const handleCreate = (event) => {
-        createNewEmployee(employee).then((newObject) => {
+    const handleCreate = () => {
+        createNewEmployee(employee).then((res) => {
+            navigate(`${res.id}`)
         })
     }
 
     return (
         <div className="employees-new">
             <h2>New Employee</h2>
-            <form onSubmit={handleCreate} className="employees-new-form">
+            <div className="employees-new-form">
                 <label className="employees-new-label">
                     Name :
                     <input
@@ -83,10 +86,14 @@ export const NewEmployee = () => {
                         className="employees-new-input"
                     />
                 </label>
-                <button className="employees-new-create" type="submit">
+                <button 
+                    className="employees-new-create"
+                    onClick={handleCreate}
+                >
+
                     Create
                 </button>
-            </form>
+            </div>
         </div>
     )
 }
