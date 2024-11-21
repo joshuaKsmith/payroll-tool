@@ -30,12 +30,11 @@ export const Login = () => {
 
     return (
         <main className="container-login">
-            <section>
-                <form className="form-login" onSubmit={handleLogin}>
-                    <h1>Payroll Tool</h1>
-                    <h2>Sign-In</h2>
-                    <fieldset>
-                        <div className="form-group">
+            <h1>Payroll Tool</h1>
+            <h2>Sign-In</h2>
+            <form className="form-login" onSubmit={handleLogin}>
+                <fieldset>
+                    <div className="form-group">
                         <input
                             type="email"
                             value={email}
@@ -45,17 +44,16 @@ export const Login = () => {
                             required
                             autoFocus
                         />
-                        </div>
-                    </fieldset>
-                    <fieldset>
-                        <div className="form-group">
-                            <button className="login-btn btn-info" type="submit">
-                                Sign in
-                            </button>
-                        </div>
-                    </fieldset>
-                </form>
-            </section>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <button className="login-btn" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
         </main>
     );
 };

@@ -1,0 +1,71 @@
+.shifts-list-item {
+    display: flex;
+    border: 2px var(--accent) solid;
+    border-radius: 10px;
+    padding: 6px;
+    margin: 5px;
+    flex-basis:44%;
+}
+
+.shifts-list-item:hover {
+    box-shadow: 0px 0px 12px var(--dark);
+}
+
+.shift-info {
+    display:flex;
+    flex-direction:column;
+}
+
+.shift-item-name {
+    margin-top:2px;
+    text-decoration: underline;
+}
+
+.shift-hours-label {
+    margin-top:4px;
+}
+
+.shift-hours-input {
+    width:15%;
+    margin-left: 15px;
+    padding-left: 8px;
+    border: 1px var(--accent) solid;
+}
+
+.shift-btn-container {
+    display:flex;
+    flex-direction: column;
+}
+
+.shift-btn-delete {
+    border: 2px var(--dark) solid;
+    background-color: rgb(255, 0, 0, 20%);
+
+}
+
+.shift-btn-delete:hover {
+    background-color: rgb(255, 0, 0, 45%);
+    box-shadow: 0px 0px 10px var(--dark);
+}
+
+.shift-btn-save {
+    border: 2px var(--accent) solid;
+    background-color: var(--light);
+}
+
+.shift-btn-save:hover {
+    border: 2px var(--light) solid;
+    background-color: var(--accent);
+    box-shadow: 0px 0px 16px var(--accent);
+}
+
+.shift-btn {
+    margin: 3px;
+    padding: 3px;
+    font-size: 13px;
+    border-radius:10px;
+}
+
+.read-only {
+    border: none;
+}

@@ -1,0 +1,65 @@
+.payroll-display {
+    display:flex;
+    flex-direction: column;
+    flex-basis: 75%;
+    border: 5px var(--darkest) solid;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px;
+    padding-top: 25px;
+}
+
+.payroll-info {
+    display:flex;
+    flex-direction: column;
+    flex-basis:80%;
+    color: var(--darkest);
+    margin: 6px;
+    border: 3px var(--dark) solid;
+    border-radius: 10px;
+    padding: 6px;
+
+}
+
+.payroll-info-header {
+    display:flex;
+}
+
+.payroll-info-header > h2 {
+    flex-basis:25%;
+    display:flex;
+    justify-content: center;
+    text-decoration: underline;
+}
+
+.payroll-shift-item {
+    display:flex;
+    
+}
+
+.payroll-shift-item > div {
+    flex-basis:25%;
+    display:flex;
+    justify-content: center;
+}
+
+.payroll-total-label {
+    font-weight: bold;
+    font-size: 20px;
+    display:flex;
+    flex-basis: 20%;
+    display:flex;
+    color: var(--darkest);
+    margin: 6px;
+    border: 3px var(--dark) solid;
+    border-radius: 10px;
+    padding: 6px;
+    align-items: center;
+    justify-content: center;
+    padding-right: 40px;
+    text-decoration: underline;
+}
+
+.payroll-total-data {
+    margin-left: 40px;
+}

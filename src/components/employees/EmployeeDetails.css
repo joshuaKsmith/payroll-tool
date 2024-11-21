@@ -1,0 +1,110 @@
+.employee-profile {
+    display:flex;
+    flex-direction: column;
+    border: 5px var(--darkest) solid;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 15px;
+}
+
+.employee-profile > h1 {
+    color: var(--darkest);
+    border: 3px var(--dark) solid;
+    border-radius: 10px;
+    padding: 10px;
+    align-self: center;
+}
+
+.employee-edit {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px var(--dark) solid;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 15px;
+}
+
+.employee-edit-form {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.employee-edit-box {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    
+}
+
+.employee-edit-field {
+    border: 1px var(--accent) solid;
+    font-size: 15px;
+}
+
+.employee-edit-form > label {
+    margin: 6px;
+    text-decoration: underline;
+}
+
+.employee-edit-form > label > input {
+    margin-left: 50px;
+}
+
+.employee-edit-rate-label {
+    flex-basis: 40%;
+    text-decoration: underline;
+}
+
+.employee-edit-rate-input {
+    max-width: 25%;
+    margin-left: 20px;
+
+}
+
+.employee-edit-hire-input {
+    background-color: var(--dark);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.profile-btn-container {
+    display:flex;
+    margin: 10px;
+}
+
+.profile-btn {
+    margin: 3px;
+    border-radius:10px;
+}
+
+.profile-btn-delete {
+    border: 2px var(--dark) solid;
+    background-color: #ff000033;
+    margin-left: 150px;
+    font-size: 14px;
+    padding: 1px;
+}
+
+.profile-btn-delete:hover {
+    background-color: rgb(255, 0, 0, 45%);
+    box-shadow: 0px 0px 10px var(--dark);
+}
+
+.profile-btn-save {
+    border: 2px var(--accent) solid;
+    background-color: var(--light);
+    margin-left: 230px;
+    font-size: 24px;
+    padding: 5px;
+}
+
+.profile-btn-save:hover {
+    border: 2px var(--light) solid;
+    background-color: var(--accent);
+    box-shadow: 0px 0px 16px var(--accent)
+}
+

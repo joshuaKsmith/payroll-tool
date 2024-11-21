@@ -1,0 +1,61 @@
+.payroll-view {
+    display:flex;
+}
+
+.payroll-create {
+    display:flex;
+    flex-direction:column;
+    flex-basis:25%;
+    border: 5px var(--darkest) solid;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px;
+    padding-top: 25px;
+}
+
+
+.payroll-date-select {
+    border: 1px var(--accent) solid;
+    margin: 11px;
+    font-size: 16px;
+}
+
+.payroll-create-label {
+    margin: 8px;
+}
+
+.payroll-end {
+    margin-left: 18px;
+}
+
+.payroll-create-form {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px var(--dark) solid;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.payroll-create-btn {
+    border: 2px var(--accent) solid;
+    border-radius: 10px;
+    align-self: center;
+    padding: 4px;
+    color: var(--darkest);
+    font-size: 17px;
+    margin-top: 10px;
+    background-color: var(--light);
+    font-weight: 900;
+}
+
+.payroll-create-btn:hover {
+    border: 2px var(--light) solid;
+    color: var(--dark);
+    background-color: var(--accent);
+    font-weight: bold;
+    box-shadow: 0px 0px 16px var(--accent)
+}
